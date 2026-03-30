@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+/* Tokens da marca — Personal Office (Corporate Luxury) */
+@theme inline {
+  --color-brand-teal: #00829a;
+  --color-brand-teal-dark: #004d5c;
+  --color-brand-orange: #f58220;
+  --font-sans: var(--font-plus-jakarta), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  --background: #fafafa;
+  --foreground: #18181b;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+/* Headlines — fonte display */
+.font-display {
+  font-family: var(--font-display);
+}
+
+/* Shimmer nos botões principais (brilho que atravessa o botão) */
+@keyframes shimmer-slide {
+  0% {
+    transform: translateX(-120%) skewX(-12deg);
+  }
+  100% {
+    transform: translateX(220%) skewX(-12deg);
+  }
+}
+
+.btn-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-shimmer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.45) 50%,
+    transparent 60%
+  );
+  animation: shimmer-slide 2.8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Padrão geométrico sutil (seção de planos) */
+.bg-geometric-subtle {
+  background-color: #f4f4f5;
+  background-image:
+    linear-gradient(30deg, rgba(0, 130, 154, 0.04) 12%, transparent 12.5%, transparent 87%, rgba(0, 130, 154, 0.04) 87.5%, rgba(0, 130, 154, 0.04)),
+    linear-gradient(150deg, rgba(0, 130, 154, 0.04) 12%, transparent 12.5%, transparent 87%, rgba(0, 130, 154, 0.04) 87.5%, rgba(0, 130, 154, 0.04)),
+    linear-gradient(30deg, rgba(0, 130, 154, 0.04) 12%, transparent 12.5%, transparent 87%, rgba(0, 130, 154, 0.04) 87.5%, rgba(0, 130, 154, 0.04)),
+    linear-gradient(150deg, rgba(0, 130, 154, 0.04) 12%, transparent 12.5%, transparent 87%, rgba(0, 130, 154, 0.04) 87.5%, rgba(0, 130, 154, 0.04));
+  background-size: 48px 84px;
+  background-position: 0 0, 0 0, 24px 42px, 24px 42px;
+}
