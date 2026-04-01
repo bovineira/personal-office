@@ -76,9 +76,9 @@ export function Hero() {
           </motion.div>
         </motion.div>
         <motion.div
-          initial={{ opacity: 0, x: 30, scale: 1.02 }}
-          animate={{ opacity: 1, x: 0, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.22, ease: "easeOut" }}
+          initial={{ opacity: 0, x: 42, scale: 0.96, filter: "blur(10px)" }}
+          animate={{ opacity: 1, x: 0, scale: 1, filter: "blur(0px)" }}
+          transition={{ duration: 1.15, delay: 1.6, ease: [0.22, 1, 0.36, 1] }}
           className="relative mt-8 md:mt-10 lg:col-span-5 lg:mt-0"
         >
           {/* Imagem grande com corte natural: topo e base extrapolam a seção. */}
