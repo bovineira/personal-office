@@ -72,7 +72,7 @@ export function Benefits() {
           >
             <div className="relative aspect-[4/5] overflow-hidden rounded-3xl shadow-2xl shadow-zinc-900/15 ring-1 ring-zinc-200/80">
               <Image
-                src="/section2-image.webp"
+                src="/section2-image-v2.webp"
                 alt="Sala executiva elegante"
                 fill
                 className="object-cover"

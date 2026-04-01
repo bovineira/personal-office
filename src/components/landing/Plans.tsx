@@ -66,17 +66,8 @@ export function Plans() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{ ...softSpring, delay: i * 0.1 }}
-              className={`relative flex flex-col rounded-3xl bg-white/90 p-8 shadow-xl backdrop-blur-md transition-shadow duration-300 hover:shadow-2xl ${
-                plan.highlight
-                  ? "ring-2 ring-[#F58220] shadow-[0_24px_60px_-12px_rgba(245,130,32,0.35)] lg:scale-[1.02]"
-                  : "ring-1 ring-zinc-200/90"
-              }`}
+              className="relative flex flex-col rounded-3xl bg-white/90 p-8 shadow-xl ring-2 ring-[#F58220] backdrop-blur-md transition-shadow duration-300 hover:shadow-2xl hover:shadow-[0_24px_60px_-12px_rgba(245,130,32,0.25)]"
             >
-              {plan.highlight && (
-                <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-[#F58220] px-4 py-1 text-xs font-bold uppercase tracking-wider text-white shadow-lg">
-                  Popular
-                </span>
-              )}
               <h3 className="font-display text-xl font-bold text-zinc-900">{plan.name}</h3>
               <p className="mt-4 font-display text-3xl font-bold text-[#00829A]">{plan.price}</p>
               <ul className="mt-6 flex flex-1 flex-col gap-4 text-sm leading-relaxed text-zinc-600 md:text-base">

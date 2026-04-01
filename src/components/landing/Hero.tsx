@@ -28,9 +28,10 @@ export function Hero() {
         />
       </div>
 
-      <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col justify-center px-6 py-28 md:px-10 lg:px-8">
+      <div className="relative z-10 mx-auto w-full max-w-6xl px-6 py-20 md:px-10 md:py-24 lg:px-8">
+        <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-12">
         <motion.div
-          className="max-w-3xl"
+          className="max-w-3xl lg:col-span-7"
           variants={staggerContainer}
           initial="hidden"
           animate="visible"
@@ -43,11 +44,7 @@ export function Hero() {
             <span className="text-[#F58220] drop-shadow-[0_2px_12px_rgba(245,130,32,0.45)]">
               ESCRITÓRIO VIRTUAL
             </span>{" "}
-            na melhor localização da{" "}
-            <span className="text-[#F58220] drop-shadow-[0_2px_12px_rgba(245,130,32,0.45)]">
-              zona norte de São Paulo
-            </span>
-            , ao lado do Fórum de Santana
+            na melhor localização da zona norte de São Paulo, ao lado do Fórum de Santana.
           </motion.h1>
 
           <motion.p
@@ -55,22 +52,18 @@ export function Hero() {
             className="mt-6 text-lg leading-relaxed text-zinc-100/95 md:text-xl"
           >
             com 20 anos de experiência, oferecemos soluções práticas e profissionais para quem
-            busca escritórios compartilhados sem arcar com os altos custos de um escritório
-            físico. Tenha todo o conforto, eficiência e infraestrutura que você precisa, pagando o
-            que cabe no seu bolso.
-          </motion.p>
-
-          <motion.p
-            variants={staggerItem}
-            className="mt-5 max-w-2xl text-base font-medium leading-relaxed text-teal-100/90 md:text-lg"
-          >
-            Transforme a forma como você trabalha: tenha um endereço de prestígio adequado para
-            você, infraestrutura moderna e serviços que elevam a credibilidade do seu negócio.
+            busca escritórios sem arcar com os altos custos de um escritório físico.
+            <br />
+            <br />
+            <span className="font-bold text-white">
+              Conforto, eficiência e infraestrutura que você precisa,{" "}
+              <span className="text-[#F58220]">pagando o que cabe no seu bolso.</span>
+            </span>
           </motion.p>
 
           <motion.div
             variants={staggerItem}
-            className="mt-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center"
+            className="mt-10 flex"
           >
             <a
               href={WHATSAPP}
@@ -80,16 +73,27 @@ export function Hero() {
             >
               Garanta seu espaço agora
             </a>
-            <a
-              href={WHATSAPP}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-2xl border-2 border-[#00829A]/80 bg-white/10 px-8 py-4 text-base font-semibold text-white shadow-2xl backdrop-blur-md transition-all duration-300 hover:border-[#00829A] hover:bg-[#00829A]/25 hover:shadow-[0_12px_40px_rgba(0,130,154,0.35)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-            >
-              Solicite sua proposta exclusiva
-            </a>
           </motion.div>
         </motion.div>
+        <motion.div
+          initial={{ opacity: 0, x: 30, scale: 1.02 }}
+          animate={{ opacity: 1, x: 0, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.22, ease: "easeOut" }}
+          className="relative mt-8 md:mt-10 lg:col-span-5 lg:mt-0"
+        >
+          {/* Imagem grande com corte natural: topo e base extrapolam a seção. */}
+          <div className="relative h-64 w-full overflow-hidden rounded-[2rem] border border-white/15 shadow-[0_20px_55px_rgba(0,0,0,0.34)] sm:h-80 md:h-[28rem] lg:-my-20 lg:h-[112vh] lg:min-h-[760px] lg:rounded-[2.25rem] lg:shadow-[0_28px_80px_rgba(0,0,0,0.42)]">
+            <Image
+              src="/aperto-mao-session1.webp"
+              alt="Aperto de mãos representando parceria profissional"
+              fill
+              priority
+              className="object-cover object-[82%_center]"
+              sizes="(min-width: 1024px) 34vw, 100vw"
+            />
+          </div>
+        </motion.div>
+        </div>
       </div>
     </section>
   );
