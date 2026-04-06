@@ -42,7 +42,7 @@ export function FooterCTA() {
             transition={softSpring}
           >
             <h2 className="font-display text-3xl font-bold leading-tight md:text-4xl lg:text-[2.35rem]">
-              Condições exclusivas para novos associados e advogados.
+              Condições exclusivas para novos associados.
             </h2>
             <p className="mt-4 text-lg text-teal-100/95 md:text-xl">oferta válida por tempo limitado.</p>
             <p className="mt-6 max-w-xl text-base leading-relaxed text-zinc-200/95 md:text-lg">

@@ -36,11 +36,22 @@ export function Hero() {
           initial="hidden"
           animate="visible"
         >
+          <motion.div variants={staggerItem} className="mb-7 flex items-center">
+            <Image
+              src="/logo-personal-certo-03.svg"
+              alt="Logo Personal Office"
+              width={578}
+              height={150}
+              priority
+              className="h-auto w-[240px] sm:w-[280px] md:w-[340px] lg:w-[380px]"
+            />
+          </motion.div>
+
           <motion.h1
             variants={staggerItem}
             className="font-display text-3xl font-bold leading-tight tracking-tight text-white drop-shadow-2xl md:text-4xl lg:text-[2.65rem] lg:leading-[1.15]"
           >
-            Personal Office: seu{" "}
+            Seu{" "}
             <span className="text-[#F58220] drop-shadow-[0_2px_12px_rgba(245,130,32,0.45)]">
               ESCRITÓRIO VIRTUAL
             </span>{" "}
