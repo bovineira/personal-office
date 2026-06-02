@@ -3,8 +3,7 @@
 import { motion } from "framer-motion";
 import { Mail, MapPin, MessageCircle, Globe } from "lucide-react";
 import { fadeUp, softSpring } from "@/lib/motion";
-
-const WHATSAPP = "https://wa.me/5511987150043";
+import { WHATSAPP_URL } from "@/lib/whatsapp";
 
 /** Mesmo local do box de contato, em forma que o Google Maps reconhece bem no embed. */
 const MAP_ADDRESS_QUERY =
@@ -55,7 +54,7 @@ export function FooterCTA() {
               transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
             >
               <a
-                href={WHATSAPP}
+                href={WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-shimmer inline-flex w-full max-w-md items-center justify-center gap-3 rounded-2xl bg-[#25D366] px-8 py-5 text-lg font-bold text-white shadow-2xl shadow-black/40 ring-2 ring-white/20 transition-transform hover:scale-[1.02] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:text-xl"

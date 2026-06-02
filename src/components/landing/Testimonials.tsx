@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Quote } from "lucide-react";
 import { fadeUp, softSpring } from "@/lib/motion";
+import { WhatsAppCtaButton } from "@/components/landing/WhatsAppCtaButton";
 
 const quotes = [
   "A localização é perfeita, ao lado do Fórum de Santana, com estacionamento coberto e com seguro.",
@@ -11,8 +12,13 @@ const quotes = [
   "Os preços são justos e me ajudaram a reduzir custos sem perder qualidade.",
 ];
 
+type TestimonialsProps = {
+  /** Exibe CTA de WhatsApp ao final da seção (usado em /teste01). */
+  showWhatsAppCta?: boolean;
+};
+
 /** Dobra 4 — Depoimentos em grid estilo masonry (alturas variadas). */
-export function Testimonials() {
+export function Testimonials({ showWhatsAppCta = false }: TestimonialsProps) {
   return (
     <section className="relative bg-zinc-50 py-24 md:py-32">
       <div className="mx-auto max-w-6xl px-6 md:px-10 lg:px-8">
@@ -66,6 +72,18 @@ export function Testimonials() {
           Duas décadas oferecendo profissionalismo, infraestrutura e confiança. O Personal Office
           é referência em escritórios virtuais e salas comerciais na zona norte de São Paulo.
         </motion.p>
+
+        {showWhatsAppCta && (
+          <motion.div
+            className="mt-10 flex justify-center"
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={softSpring}
+          >
+            <WhatsAppCtaButton />
+          </motion.div>
+        )}
       </div>
     </section>
   );

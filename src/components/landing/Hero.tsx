@@ -3,8 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { staggerContainer, staggerItem } from "@/lib/motion";
-
-const WHATSAPP = "https://wa.me/5511987150043";
+import { WHATSAPP_URL } from "@/lib/whatsapp";
 
 /**
  * Dobra 1 — Hero com imagem de escritório luxuoso, overlay em teal/preto e CTAs premium.
@@ -77,7 +76,7 @@ export function Hero() {
             className="mt-10 flex"
           >
             <a
-              href={WHATSAPP}
+              href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-shimmer group relative inline-flex items-center justify-center rounded-2xl bg-[#F58220] px-8 py-4 text-center text-base font-semibold text-white shadow-2xl shadow-black/30 ring-1 ring-white/10 transition-transform duration-300 hover:scale-[1.03] hover:animate-pulse hover:shadow-[0_0_28px_rgba(245,130,32,0.5)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#F58220]"

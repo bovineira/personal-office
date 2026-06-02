@@ -3,8 +3,7 @@
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 import { fadeUp, softSpring } from "@/lib/motion";
-
-const WHATSAPP = "https://wa.me/5511987150043";
+import { WHATSAPP_URL } from "@/lib/whatsapp";
 
 const plans = [
   {
@@ -92,7 +91,7 @@ export function Plans() {
           transition={softSpring}
         >
           <a
-            href={WHATSAPP}
+            href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-shimmer inline-flex items-center justify-center rounded-2xl bg-[#F58220] px-10 py-4 text-base font-semibold text-white shadow-2xl transition-transform duration-300 hover:scale-[1.02] hover:animate-pulse focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#F58220]"

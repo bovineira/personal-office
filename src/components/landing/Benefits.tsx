@@ -10,6 +10,7 @@ import {
   Users,
 } from "lucide-react";
 import { fadeUp, softSpring } from "@/lib/motion";
+import { WhatsAppCtaButton } from "@/components/landing/WhatsAppCtaButton";
 
 const benefits = [
   {
@@ -41,8 +42,13 @@ const benefits = [
   },
 ];
 
+type BenefitsProps = {
+  /** Exibe CTA de WhatsApp ao final da seção (usado em /teste01). */
+  showWhatsAppCta?: boolean;
+};
+
 /** Dobra 2 — Benefícios em grid com ícones Lucide e lift no hover. */
-export function Benefits() {
+export function Benefits({ showWhatsAppCta = false }: BenefitsProps) {
   return (
     <section className="relative bg-zinc-50 py-24 md:py-32">
       <div className="mx-auto max-w-6xl px-6 md:px-10 lg:px-8">
@@ -118,6 +124,18 @@ export function Benefits() {
           Mais do que um espaço, oferecemos credibilidade, praticidade e apoio completo para que
           você foque no que realmente importa: o crescimento do seu negócio.
         </motion.p>
+
+        {showWhatsAppCta && (
+          <motion.div
+            className="mt-10 flex justify-center"
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={softSpring}
+          >
+            <WhatsAppCtaButton />
+          </motion.div>
+        )}
       </div>
     </section>
   );

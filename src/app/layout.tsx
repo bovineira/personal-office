@@ -17,14 +17,15 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Personal Office | Escritório Virtual na Zona Norte de São Paulo",
+  title: "Coworking e Escritório Virtual Santana SP | Personal Office",
   description:
-    "20 anos de credibilidade. Escritórios virtuais e compartilhados ao lado do Fórum de Santana. Planos flexíveis e infraestrutura premium.",
+    "Endereço comercial e coworking ao lado do Fórum de Santana. Sala executiva, endereço fiscal e sala de reunião. Planos a partir de R$ 100/mês.",
   keywords: [
+    "coworking santana",
     "escritório virtual",
+    "sala para atendimento sp",
+    "aluguel de sala zona norte sp",
     "São Paulo",
-    "Santana",
-    "salas compartilhadas",
     "Personal Office",
   ],
 };
