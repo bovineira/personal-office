@@ -4,19 +4,7 @@ import { motion } from "framer-motion";
 import { Mail, MapPin, MessageCircle, Globe } from "lucide-react";
 import { fadeUp, softSpring } from "@/lib/motion";
 import { WHATSAPP_URL } from "@/lib/whatsapp";
-
-/**
- * Coordenadas da ficha oficial do Google Business "Personal Office" (Av. Eng. Caetano
- * Álvares, 530 - Casa Verde, São Paulo - SP, 02520-310). Usamos lat/lng em vez do
- * endereço em texto porque o geocoder do Google resolvia esse texto para o bairro
- * errado (Limão, CEP 02546-000).
- */
-const MAP_COORDINATES = "-23.5091503,-46.6703977";
-const MAP_LABEL = "Personal Office";
-
-const mapsEmbedSrc = `https://maps.google.com/maps?q=${MAP_COORDINATES}(${encodeURIComponent(
-  MAP_LABEL
-)})&hl=pt-BR&z=17&ie=UTF8&output=embed`;
+import { mapsEmbedSrc, OFFICE_ADDRESS_SHORT } from "@/lib/location";
 
 /** Dobra 5 — CTA final escuro, contato e placeholder do mapa. */
 export function FooterCTA() {
@@ -93,9 +81,7 @@ export function FooterCTA() {
                   <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-[#F58220]" aria-hidden />
                   <div>
                     <span className="text-sm text-teal-200/80">Endereço</span>
-                    <p className="font-medium leading-relaxed">
-                      Av. Engº Caetano Álvares, nº 530 – Casa Verde – São Paulo, SP – CEP 02520-310
-                    </p>
+                    <p className="font-medium leading-relaxed">{OFFICE_ADDRESS_SHORT}</p>
                   </div>
                 </li>
                 <li className="flex gap-3">

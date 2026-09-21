@@ -54,6 +54,40 @@ body {
   pointer-events: none;
 }
 
+/* Destaque de texto com gradiente animado — sempre no mesmo tom, variando suavemente. */
+@keyframes gradient-flow {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.text-gradient-orange {
+  background-image: linear-gradient(90deg, #ea580c, #f58220, #fdba74, #f58220, #ea580c);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradient-flow 7s ease-in-out infinite;
+}
+
+/* Faixa fina com texto passando (marquee) — clean, sem paradas bruscas. */
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee-scroll 26s linear infinite;
+}
+
 /* Padrão geométrico sutil (seção de planos) */
 .bg-geometric-subtle {
   background-color: #f4f4f5;
