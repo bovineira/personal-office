@@ -72,7 +72,8 @@ export function HeroSalaReuniao() {
               <span className="font-bold text-white">
                 sem contrato longo e sem burocracia.
               </span>{" "}
-              Estacionamento coberto e 20 anos de estrutura consolidada na região.
+              Melhor preço da zona norte, estacionamento coberto e mais de 20 anos de estrutura
+              consolidada na região.
             </motion.p>
 
             <motion.div variants={staggerItem} className="mt-9">
