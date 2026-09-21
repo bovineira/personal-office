@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 import { Sparkles } from "lucide-react";
 import { staggerContainer, staggerItem } from "@/lib/motion";
 import { WHATSAPP_URL_SALA_REUNIAO } from "@/lib/whatsapp";
@@ -19,6 +19,7 @@ const STICKY_DISCLAIMER = "Aproveite sua chance HOJE, pois as salas vão se esgo
 /** Dobra 1 — Hero da landing /sala-reuniao, com CTA fixo no mobile ao rolar. */
 export function HeroSalaReuniao() {
   const ctaRef = useRef<HTMLAnchorElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
   const [showSticky, setShowSticky] = useState(false);
 
   useEffect(() => {
@@ -32,14 +33,36 @@ export function HeroSalaReuniao() {
     return () => observer.disconnect();
   }, []);
 
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end start"],
+  });
+  const bgY = useTransform(scrollYProgress, [0, 1], ["-8%", "14%"]);
+
   return (
-    <section className="relative overflow-hidden bg-[#0D3B45]">
+    <section ref={sectionRef} className="relative overflow-hidden bg-[#0D3B45]">
+      {/* Foto do escritório misturada ao azul da marca, com leve parallax no scroll */}
+      <motion.div className="absolute inset-0 z-0" style={{ y: bgY }} aria-hidden>
+        <Image
+          src="/images/sala-reuniao/sala-reuniao-02.jpeg"
+          alt=""
+          fill
+          loading="eager"
+          className="scale-125 object-cover object-center"
+          sizes="100vw"
+        />
+      </motion.div>
       <div
-        className="pointer-events-none absolute -right-24 top-0 h-96 w-96 rounded-full bg-[#00829A]/20 blur-3xl"
+        className="absolute inset-0 z-[1] bg-gradient-to-br from-[#0D3B45]/95 via-[#0D3B45]/85 to-[#001a1f]/95"
+        aria-hidden
+      />
+
+      <div
+        className="pointer-events-none absolute -right-24 top-0 z-[2] h-96 w-96 rounded-full bg-[#00829A]/20 blur-3xl"
         aria-hidden
       />
       <div
-        className="pointer-events-none absolute -left-24 bottom-0 h-72 w-72 rounded-full bg-[#F58220]/10 blur-3xl"
+        className="pointer-events-none absolute -left-24 bottom-0 z-[2] h-72 w-72 rounded-full bg-[#F58220]/10 blur-3xl"
         aria-hidden
       />
 
