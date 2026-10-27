@@ -1,4 +1,4 @@
-const WHATSAPP_PHONE = "5511987150043";
+export const WHATSAPP_PHONE = "5511987150043";
 
 const WHATSAPP_MESSAGE =
   "Olá! Tenho interesse em conhecer os planos da Personal Office.";
