@@ -14,7 +14,6 @@ const trustItems = [
 ];
 
 const CTA_LABEL = "Quero Alugar Minha Sala de Reunião →";
-const STICKY_DISCLAIMER = "Aproveite sua chance HOJE, pois as salas vão se esgotar logo!";
 
 /** Dobra 1 — Hero da landing /sala-reuniao, com CTA fixo no mobile ao rolar. */
 export function HeroSalaReuniao() {
@@ -95,8 +94,7 @@ export function HeroSalaReuniao() {
               <span className="font-bold text-white">
                 sem contrato longo e sem burocracia.
               </span>{" "}
-              Melhor preço da zona norte, estacionamento coberto e mais de 20 anos de estrutura
-              consolidada na região.
+              Melhor preço da zona norte e estacionamento coberto.
             </motion.p>
 
             <motion.div variants={staggerItem} className="mt-9">
@@ -154,9 +152,6 @@ export function HeroSalaReuniao() {
             >
               {CTA_LABEL}
             </a>
-            <p className="mt-2 text-center text-xs font-semibold text-[#F58220]">
-              {STICKY_DISCLAIMER}
-            </p>
           </motion.div>
         )}
       </AnimatePresence>

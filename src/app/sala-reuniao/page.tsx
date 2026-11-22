@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { MarqueeBar } from "@/components/landing/MarqueeBar";
 import { HeroSalaReuniao } from "@/components/landing/HeroSalaReuniao";
 import { BenefitsSalaReuniao } from "@/components/landing/BenefitsSalaReuniao";
 import { SocialProofSalaReuniao } from "@/components/landing/SocialProofSalaReuniao";
@@ -27,7 +26,6 @@ export const metadata: Metadata = {
 export default function SalaReuniaoPage() {
   return (
     <>
-      <MarqueeBar text="Salas Limitadas - Entre em contato o quanto antes" />
       <HeroSalaReuniao />
       <BenefitsSalaReuniao />
       <SocialProofSalaReuniao />

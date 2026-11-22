@@ -31,11 +31,8 @@ export function Testimonials({ showWhatsAppCta = false }: TestimonialsProps) {
           className="max-w-3xl"
         >
           <h2 className="font-display text-3xl font-bold tracking-tight text-zinc-900 md:text-4xl">
-            20 anos de credibilidade comprovada.
+            A confiança de quem já escolheu a Personal Office.
           </h2>
-          <p className="mt-4 text-lg text-zinc-600 md:text-xl">
-            a confiança de quem já escolheu a Personal Office:
-          </p>
         </motion.div>
 
         <div className="mt-14 columns-1 gap-6 md:columns-2">
@@ -69,7 +66,7 @@ export function Testimonials({ showWhatsAppCta = false }: TestimonialsProps) {
           viewport={{ once: true }}
           transition={softSpring}
         >
-          Duas décadas oferecendo profissionalismo, infraestrutura e confiança. O Personal Office
+          Profissionalismo, infraestrutura e confiança. O Personal Office
           é referência em escritórios virtuais e salas comerciais na zona norte de São Paulo.
         </motion.p>
 

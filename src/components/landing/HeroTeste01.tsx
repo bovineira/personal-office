@@ -48,7 +48,7 @@ export function HeroTeste01() {
               variants={staggerItem}
               className="inline-flex items-center rounded-full bg-[#F97316]/15 px-4 py-2 text-sm font-semibold text-[#F97316] ring-1 ring-[#F97316]/30"
             >
-              ⭐ 20 anos de experiência • Zona Norte de SP
+              📍 Zona Norte de SP
             </motion.span>
 
             <motion.h1

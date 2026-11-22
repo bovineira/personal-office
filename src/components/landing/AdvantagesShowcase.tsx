@@ -3,7 +3,6 @@
 import { useState, type KeyboardEvent } from "react";
 import { AnimatePresence, motion, useReducedMotion, type Variants } from "framer-motion";
 import {
-  Award,
   ChevronLeft,
   ChevronRight,
   ConciergeBell,
@@ -54,12 +53,6 @@ const advantages: Advantage[] = [
     title: "Atendimento humano",
     description: "Recepção e portaria prontas para receber o seu cliente e os convidados dele.",
     icon: ConciergeBell,
-  },
-  {
-    tag: "Tradição",
-    title: "Mais de 20 anos de estrutura",
-    description: "Estrutura consolidada na região há mais de 20 anos.",
-    icon: Award,
   },
 ];
 
