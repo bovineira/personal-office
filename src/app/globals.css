@@ -99,3 +99,90 @@ body {
   background-size: 48px 84px;
   background-position: 0 0, 0 0, 24px 42px, 24px 42px;
 }
+
+/* ---------- Página de aluguel (v2) ---------- */
+
+/* Foto da primeira tela: aproximação lenta, só transform (leve no celular). */
+@keyframes hero-aproxima {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+
+.hero-foto {
+  animation: hero-aproxima 18s ease-out both;
+}
+
+/* Trilho de arrastar com scroll nativo, sem barra visível. */
+.trilho {
+  scrollbar-width: none;
+  overscroll-behavior-x: contain;
+}
+
+.trilho::-webkit-scrollbar {
+  display: none;
+}
+
+.botao-redondo {
+  display: inline-flex;
+  height: 3rem;
+  width: 3rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  background: #0d3b45;
+  color: #fff;
+  transition: background-color 0.2s;
+}
+
+.botao-redondo:hover {
+  background: #00829a;
+}
+
+.botao-redondo:focus-visible {
+  outline: 3px solid #f58220;
+  outline-offset: 3px;
+}
+
+.dialogo-foto {
+  margin: 0;
+  max-height: none;
+  max-width: none;
+  background: transparent;
+  padding: 0;
+}
+
+.dialogo-foto::backdrop {
+  background: rgba(3, 20, 25, 0.95);
+}
+
+@keyframes revela-item {
+  from {
+    opacity: 0;
+    transform: translateY(1.25rem);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Só onde o navegador suporta animação por rolagem; nos outros, tudo já aparece pronto. */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .revela {
+      animation: revela-item linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 70%;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-foto {
+    animation: none;
+  }
+}

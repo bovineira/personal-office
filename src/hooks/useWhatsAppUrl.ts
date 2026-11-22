@@ -21,3 +21,9 @@ export function useWhatsAppUrl(page: WhatsAppPage) {
   const search = useSyncExternalStore(subscribe, getSearch, getServerSearch);
   return buildWhatsAppUrl(WHATSAPP_MESSAGES[page] + describeOrigin(search));
 }
+
+/** Mesma lógica, para mensagens montadas na hora (ex.: com o tamanho de sala escolhido). */
+export function useWhatsAppUrlFor(message: string, suffix = "") {
+  const search = useSyncExternalStore(subscribe, getSearch, getServerSearch);
+  return buildWhatsAppUrl(message + describeOrigin(search) + suffix);
+}
