@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { staggerContainer, staggerItem } from "@/lib/motion";
-import { WHATSAPP_URL } from "@/lib/whatsapp";
+import { useWhatsAppUrl } from "@/hooks/useWhatsAppUrl";
 
 const proofItems = [
   { icon: "📍", text: "Ao lado do Fórum de Santana" },
@@ -13,9 +13,11 @@ const proofItems = [
 ];
 
 /**
- * Hero A/B — variante /teste01 para tráfego Google Ads (coworking / endereço comercial).
+ * Hero da home — assinatura (escritório virtual / endereço comercial).
  */
 export function HeroTeste01() {
+  const whatsappUrl = useWhatsAppUrl("assinatura");
+
   return (
     <section className="relative overflow-hidden bg-[#0D3B45]">
       {/* Background: imagem + degradê azul (mesmo efeito da home) */}
@@ -59,7 +61,6 @@ export function HeroTeste01() {
               <span className="text-[#F97316] drop-shadow-[0_2px_12px_rgba(249,115,22,0.4)]">
                 endereço comercial
               </span>{" "}
-              e coworking
               <br />
               <span className="text-[#F97316] drop-shadow-[0_2px_12px_rgba(249,115,22,0.4)]">
                 ao lado do Fórum de Santana
@@ -79,7 +80,7 @@ export function HeroTeste01() {
               className="mt-8 rounded-2xl border border-white/10 bg-white/5 px-5 py-4 backdrop-blur-sm md:inline-flex md:items-end md:gap-4"
             >
               <div>
-                <p className="text-sm text-zinc-300">Planos a partir de:</p>
+                <p className="text-sm text-zinc-300">Plano de atendimento telefônico a partir de:</p>
                 <p className="font-display text-3xl font-bold text-[#F97316] md:text-4xl">
                   R$ 100/mês
                 </p>
@@ -91,7 +92,7 @@ export function HeroTeste01() {
 
             <motion.div variants={staggerItem} className="mt-8 flex flex-col items-start gap-4">
               <a
-                href={WHATSAPP_URL}
+                href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-shimmer inline-flex items-center justify-center rounded-full bg-[#F97316] px-8 py-4 text-base font-semibold text-white shadow-2xl shadow-black/30 transition-transform hover:scale-[1.02] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#F97316]"
@@ -99,7 +100,7 @@ export function HeroTeste01() {
                 Ver planos e preços →
               </a>
               <a
-                href={WHATSAPP_URL}
+                href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-sm font-medium text-white/90 underline-offset-4 transition-colors hover:text-white hover:underline"

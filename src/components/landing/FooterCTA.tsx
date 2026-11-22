@@ -3,11 +3,13 @@
 import { motion } from "framer-motion";
 import { Mail, MapPin, MessageCircle, Globe } from "lucide-react";
 import { fadeUp, softSpring } from "@/lib/motion";
-import { WHATSAPP_URL } from "@/lib/whatsapp";
+import { useWhatsAppUrl } from "@/hooks/useWhatsAppUrl";
 import { mapsEmbedSrc, OFFICE_ADDRESS_SHORT } from "@/lib/location";
 
 /** Dobra 5 — CTA final escuro, contato e placeholder do mapa. */
 export function FooterCTA() {
+  const whatsappUrl = useWhatsAppUrl("assinatura");
+
   return (
     <footer className="relative overflow-hidden bg-gradient-to-br from-[#004d5c] via-[#003a47] to-[#001a1f] py-24 text-white md:py-32">
       {/* Detalhes decorativos (laranja flutuante) */}
@@ -36,7 +38,6 @@ export function FooterCTA() {
             <h2 className="font-display text-3xl font-bold leading-tight md:text-4xl lg:text-[2.35rem]">
               Condições exclusivas para novos associados.
             </h2>
-            <p className="mt-4 text-lg text-teal-100/95 md:text-xl">oferta válida por tempo limitado.</p>
             <p className="mt-6 max-w-xl text-base leading-relaxed text-zinc-200/95 md:text-lg">
               Credibilidade, estrutura e condições especiais esperam por você no Personal Office.
             </p>
@@ -47,7 +48,7 @@ export function FooterCTA() {
               transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
             >
               <a
-                href={WHATSAPP_URL}
+                href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-shimmer inline-flex w-full max-w-md items-center justify-center gap-3 rounded-2xl bg-[#25D366] px-8 py-5 text-lg font-bold text-white shadow-2xl shadow-black/40 ring-2 ring-white/20 transition-transform hover:scale-[1.02] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:text-xl"

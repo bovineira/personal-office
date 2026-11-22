@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 import { fadeUp, softSpring } from "@/lib/motion";
-import { WHATSAPP_URL } from "@/lib/whatsapp";
+import { useWhatsAppUrl } from "@/hooks/useWhatsAppUrl";
 
 const plans = [
   {
@@ -38,6 +38,8 @@ const plans = [
 
 /** Dobra 3 — Pricing cards com destaque no plano Light. */
 export function Plans() {
+  const whatsappUrl = useWhatsAppUrl("assinatura");
+
   return (
     <section className="relative bg-geometric-subtle py-24 md:py-32">
       <div className="mx-auto max-w-6xl px-6 md:px-10 lg:px-8">
@@ -91,12 +93,12 @@ export function Plans() {
           transition={softSpring}
         >
           <a
-            href={WHATSAPP_URL}
+            href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-shimmer inline-flex items-center justify-center rounded-2xl bg-[#F58220] px-10 py-4 text-base font-semibold text-white shadow-2xl transition-transform duration-300 hover:scale-[1.02] hover:animate-pulse focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#F58220]"
           >
-            Valores válidos por tempo determinado – aproveite agora!
+            Quero conhecer os planos
           </a>
           <p className="max-w-3xl text-center text-lg leading-relaxed text-zinc-700">
             Planos flexíveis, acessíveis e pensados para diferentes perfis de profissionais e
