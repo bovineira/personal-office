@@ -5,22 +5,22 @@ import { SocialProofSalaReuniao } from "@/components/landing/SocialProofSalaReun
 import { LocationSalaReuniao } from "@/components/landing/LocationSalaReuniao";
 
 export const metadata: Metadata = {
-  title: "Sala de Reunião na Zona Norte, ao Lado do Fórum de Santana | Personal Office",
+  title: "Sala Comercial para Alugar ao Lado do Fórum de Santana | Personal Office",
   description:
-    "Salas de reunião novas, equipadas e climatizadas na Zona Norte de SP. Estacionamento coberto, disponibilidade imediata e sem contrato longo. Alugue hoje pelo WhatsApp.",
+    "Salas comerciais privativas na Zona Norte de SP, ao lado do Fórum de Santana, com valor mensal e estacionamento coberto. Agende sua visita pelo WhatsApp.",
   keywords: [
-    "sala de reunião zona norte",
-    "sala de reunião santana",
-    "sala de reunião perto do fórum de santana",
-    "aluguel de sala de reunião sp",
-    "sala de reunião casa verde",
+    "sala comercial para alugar",
+    "aluguel de sala comercial zona norte",
+    "sala comercial perto do fórum de santana",
+    "escritório para alugar zona norte",
+    "sala comercial casa verde",
     "Personal Office",
   ],
 };
 
 /**
- * Landing /sala-reuniao — página dedicada a tráfego de Google Ads com message-match
- * na keyword "sala de reunião zona norte". Um único CTA (WhatsApp) repetido no Hero
+ * Landing /sala-reuniao — aluguel mensal de sala comercial (Frente 2 do Google Ads), com
+ * message-match em "sala comercial para alugar". Um único CTA (WhatsApp) repetido no Hero
  * e no CTA fixo mobile; sem navegação concorrente (sem Área do Cliente).
  */
 export default function SalaReuniaoPage() {

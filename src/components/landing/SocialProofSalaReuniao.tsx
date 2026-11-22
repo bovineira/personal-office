@@ -41,13 +41,12 @@ export function SocialProofSalaReuniao() {
           className="text-center"
         >
           <h2 className="font-display text-3xl font-bold tracking-tight text-zinc-900 md:text-4xl">
-            Quem Já Alugou uma{" "}
-            <span className="text-gradient-orange">Sala de Reunião</span>, Recomenda
+            A Confiança de Quem Já Escolheu a{" "}
+            <span className="text-gradient-orange">Personal Office</span>
           </h2>
           <p className="mt-4 text-lg text-zinc-600 md:text-xl">
-            Veja a experiência de quem já utilizou as{" "}
-            <span className="font-bold text-zinc-900">novas salas</span> para reuniões e
-            atendimentos.
+            Veja a experiência de quem já usa a{" "}
+            <span className="font-bold text-zinc-900">nossa estrutura.</span>
           </p>
         </motion.div>
 

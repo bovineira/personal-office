@@ -48,8 +48,3 @@ export function describeOrigin(search: string) {
   const parts = [source && `via ${source}`, ref && `ref: ${ref}`].filter(Boolean);
   return parts.length > 0 ? ` (${parts.join(", ")})` : "";
 }
-
-/** Link atual da /sala-reuniao (sem origem). */
-export const WHATSAPP_URL_SALA_REUNIAO = buildWhatsAppUrl(
-  "Olá! Tenho interesse em alugar a sala de reunião da Personal Office."
-);

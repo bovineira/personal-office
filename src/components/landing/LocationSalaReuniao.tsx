@@ -18,7 +18,7 @@ export function LocationSalaReuniao() {
           className="text-center"
         >
           <h2 className="font-display text-2xl font-bold tracking-tight text-white md:text-3xl">
-            Sua Sala de Reunião na Zona Norte, Bem Aqui do Lado do{" "}
+            Sua Sala Comercial na Zona Norte, Bem Aqui do Lado do{" "}
             <span className="text-gradient-orange drop-shadow-[0_2px_12px_rgba(245,130,32,0.3)]">
               Fórum de Santana
             </span>

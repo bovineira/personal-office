@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Award, Focus, Wifi, MapPin, CalendarClock, Handshake, BadgePercent } from "lucide-react";
+import { Award, Focus, Wifi, MapPin, Users, Handshake } from "lucide-react";
 import { fadeUp, softSpring } from "@/lib/motion";
 import { ImageCarousel, type CarouselSlide } from "@/components/landing/ImageCarousel";
 
@@ -15,12 +15,13 @@ const benefits = [
   {
     title: "Espaço Só Seu, Para Focar",
     description:
-      "Um ambiente exclusivo para a sua reunião, sem as distrações do home office ou de espaços compartilhados e barulhentos.",
+      "Uma sala privativa para trabalhar com foco, sem as distrações do home office ou de espaços compartilhados e barulhentos.",
     icon: Focus,
   },
   {
-    title: "Estrutura Completa",
-    description: "Internet de alta velocidade, ar-condicionado e tudo que você precisa pronto — é só chegar.",
+    title: "Estrutura Sob Medida",
+    description:
+      "Sala climatizada, com internet, limpeza e atendimento telefônico como serviços opcionais, conforme a sua necessidade.",
     icon: Wifi,
   },
   {
@@ -30,9 +31,10 @@ const benefits = [
     icon: MapPin,
   },
   {
-    title: "Flexibilidade Total",
-    description: "Alugue só quando precisar — sem contrato longo, sem burocracia e sem taxas escondidas.",
-    icon: CalendarClock,
+    title: "Também Para Suas Reuniões",
+    description:
+      "Trabalhe e faça suas reuniões na mesma sala, com privacidade para receber clientes e parceiros.",
+    icon: Users,
   },
   {
     title: "Atendimento Humano",
@@ -44,11 +46,11 @@ const benefits = [
 const spaceSlides: CarouselSlide[] = [
   {
     src: "/images/sala-reuniao/sala-reuniao-01.jpeg",
-    alt: "Sala de reunião remodelada, climatizada e equipada",
+    alt: "Sala privativa remodelada com duas mesas de trabalho",
   },
   {
     src: "/images/sala-reuniao/sala-reuniao-02.jpeg",
-    alt: "Sala de reunião com mesa de trabalho e ambiente climatizado",
+    alt: "Sala privativa com mesa de trabalho e mesa de apoio",
   },
   {
     src: "/images/sala-reuniao/sala-reuniao-03.jpeg",
@@ -56,7 +58,7 @@ const spaceSlides: CarouselSlide[] = [
   },
 ];
 
-/** Dobra 2 — intro centralizada, bullet de preço em destaque, carrossel em vitrine e checklist enxuto. */
+/** Dobra 2 — intro centralizada, carrossel em vitrine e checklist enxuto. */
 export function BenefitsSalaReuniao() {
   return (
     <section className="relative bg-geometric-subtle py-24 md:py-32">
@@ -71,31 +73,14 @@ export function BenefitsSalaReuniao() {
         >
           <h2 className="font-display text-3xl font-bold tracking-tight text-zinc-900 md:text-4xl">
             Muito Além de uma{" "}
-            <span className="text-gradient-orange">Sala de Reunião</span>
+            <span className="text-gradient-orange">Sala Comercial</span>
           </h2>
           <p className="mt-4 text-lg text-zinc-600 md:text-xl">
             Um espaço remodelado, pensado para valorizar a forma como você{" "}
             <span className="font-bold text-zinc-900">
               recebe seus clientes e conduz o seu trabalho.
-            </span>{" "}
-            Melhor custo/benefício da região.
+            </span>
           </p>
-        </motion.div>
-
-        {/* Bullet principal — preço, em destaque a pedido do Denis */}
-        <motion.div
-          className="mt-8 flex justify-center"
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-40px" }}
-          transition={softSpring}
-        >
-          <div className="inline-flex items-center gap-3 rounded-2xl border-2 border-[#F58220]/35 bg-white px-6 py-3.5 shadow-lg shadow-[#F58220]/10">
-            <BadgePercent className="h-6 w-6 shrink-0 text-[#F58220]" strokeWidth={2} aria-hidden />
-            <p className="font-display text-base font-bold text-zinc-900 md:text-lg">
-              <span className="text-gradient-orange">Melhor custo-benefício</span> da região
-            </p>
-          </div>
         </motion.div>
 
         {/* Carrossel em vitrine — cheio, acima do checklist */}
