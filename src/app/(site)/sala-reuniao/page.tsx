@@ -1,8 +1,17 @@
 import type { Metadata } from "next";
-import { HeroSalaReuniao } from "@/components/landing/HeroSalaReuniao";
-import { BenefitsSalaReuniao } from "@/components/landing/BenefitsSalaReuniao";
-import { SocialProofSalaReuniao } from "@/components/landing/SocialProofSalaReuniao";
-import { LocationSalaReuniao } from "@/components/landing/LocationSalaReuniao";
+import { BarraFixa } from "@/components/aluguel/BarraFixa";
+import {
+  ComoFunciona,
+  CtaFinal,
+  Depoimentos,
+  Duvidas,
+  Estrutura,
+  Localizacao,
+} from "@/components/aluguel/Conteudo";
+import { EscolhaProvider } from "@/components/aluguel/EscolhaContext";
+import { Galeria } from "@/components/aluguel/Galeria";
+import { Hero } from "@/components/aluguel/Hero";
+import { Salas } from "@/components/aluguel/Salas";
 
 export const metadata: Metadata = {
   title: "Sala Comercial para Alugar ao Lado do Fórum de Santana | Personal Office",
@@ -19,17 +28,25 @@ export const metadata: Metadata = {
 };
 
 /**
- * Landing /sala-reuniao — aluguel mensal de sala comercial (Frente 2 do Google Ads), com
- * message-match em "sala comercial para alugar". Um único CTA (WhatsApp) repetido no Hero
- * e no CTA fixo mobile; sem navegação concorrente (sem Área do Cliente).
+ * Landing /sala-reuniao: aluguel mensal de sala comercial (Frente 2 do Google Ads).
+ * Design aprovado pelo cliente em 23/11/2026 (era a página de teste /v2/sala-comercial).
+ * Único CTA: "Agendar visita" (links wa.me, medidos pelo GTM do layout do grupo "(site)").
  */
 export default function SalaReuniaoPage() {
   return (
-    <>
-      <HeroSalaReuniao />
-      <BenefitsSalaReuniao />
-      <SocialProofSalaReuniao />
-      <LocationSalaReuniao />
-    </>
+    <EscolhaProvider>
+      <main>
+        <Hero />
+        <Galeria />
+        <Salas />
+        <Estrutura />
+        <ComoFunciona />
+        <Localizacao />
+        <Depoimentos />
+        <Duvidas />
+      </main>
+      <CtaFinal />
+      <BarraFixa />
+    </EscolhaProvider>
   );
 }

@@ -1,14 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // Páginas de teste (aprovação do cliente): fora do Google também pelo cabeçalho HTTP.
-  async headers() {
-    return [
-      {
-        source: "/v2/:path*",
-        headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow" }],
-      },
-    ];
+  // A página de teste aprovada virou a /sala-reuniao (23/11/2026): o link antigo leva para ela.
+  async redirects() {
+    return [{ source: "/v2/:path*", destination: "/sala-reuniao", permanent: false }];
   },
   images: {
     remotePatterns: [

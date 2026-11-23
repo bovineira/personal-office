@@ -8,7 +8,7 @@ import type { Sala } from "@/data/salas";
 type Escolha = {
   sala: Sala | null;
   escolher: (sala: Sala | null) => void;
-  /** Acrescentado ao fim da mensagem nas páginas de teste, para não virar lead. */
+  /** Acrescentado ao fim da mensagem em páginas de teste (paginaDeTeste), para não virar lead. */
   sufixoMensagem: string;
 };
 
